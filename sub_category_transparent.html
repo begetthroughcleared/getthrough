@@ -616,7 +616,7 @@
         </div>
         <div class="middlecolumn" id="getimage">
             <div class="card">
-                <h2 class="subjectname">BEE</h2>
+                <h2 class="subjectname" onclick="subject_change()">BEE</h2>
                 <h5 style="padding-bottom: 8px;">Title description, <span id="datevalue"></span><button id="paperbutton" class="btn" onclick="Q_paper()">Question papers</button></h5>
                 <hr>
                 <div style="height:400px; overflow: auto;"><img class="fakeimg" src="images/syllabus/BEEIMAGE.jpg" width="100%"
@@ -727,7 +727,15 @@
             y[0].innerHTML = localStorage.getItem('subject');
 
         }
-
+        
+        //function to change the subject after visiting question papers
+        function subject_change() {
+            var  sub, x;
+            sub  = localStorage.getItem('subject');
+            x = document.getElementsByClassName("fakeimg");
+            x[0].src = "images/syllabus/" + sub + "IMAGE.jpg";
+        }
+        
         //function for question paper display.
         function Q_paper(){
             let x, sub; 
