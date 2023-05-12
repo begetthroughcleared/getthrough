@@ -179,7 +179,7 @@
         }
 
         /* question paper buttons  */
-        #paperbutton {
+        #spaperbutton, #qpaperbutton {
             margin-top: 0;
             padding: 5px 5px;
             float: right;
@@ -617,7 +617,7 @@
         <div class="middlecolumn" id="getimage">
             <div class="card">
                 <h2 class="subjectname" onclick="subject_change()">BEE</h2>
-                <h5 style="padding-bottom: 8px;">Title description, <span id="datevalue"></span><button id="paperbutton" class="btn" onclick="Q_paper()">Question papers</button></h5>
+                <h5 style="padding-bottom: 8px;">Title description, <span id="datevalue"></span><button id="qpaperbutton" class="btn" onclick="Q_paper()">Question papers</button><button id="spaperbutton" class="btn" style="display:none;" onclick="subject_change()">Syllabus copy</button></h5>
                 <hr>
                 <div style="height:400px; overflow: auto;"><img class="fakeimg" src="images/syllabus/BEEIMAGE.jpg" width="100%"
                         alt="Oops!!,.. Image is Missing"></div>
@@ -730,19 +730,23 @@
         
         //function to change the subject after visiting question papers
         function subject_change() {
-            var  sub, x;
+            var  sub, x, y;
             sub  = localStorage.getItem('subject');
             x = document.getElementsByClassName("fakeimg");
             x[0].src = "images/syllabus/" + sub + "IMAGE.jpg";
+            document.getElementById("spaperbutton").style.display = "none";
+            document.getElementById("qpaperbutton").style.display = "block";
         }
-        
+
         //function for question paper display.
         function Q_paper(){
             let x, sub; 
             sub = localStorage.getItem('subject');
-            if(sub!=undefined){
+            if(sub !== undefined){
             x = document.getElementsByClassName("fakeimg");
             x[0].src = "images/syllabus/qpapers/"+ sub + "paper.jpg";
+            document.getElementById("qpaperbutton").style.display = "none";
+            document.getElementById("spaperbutton").style.display = "block";
             }
             else{
                 window.location.reload();
