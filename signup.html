@@ -217,7 +217,7 @@
                 let form = document.querySelector("form");
             form.addEventListener('submit', (e) => {
             e.preventDefault();
-            document.querySelector("#sub").style.disabled = true;
+            document.querySelector("#sub").disabled = true;
             document.querySelector("#sub").innerHTML = "submitting...";
             let data = new FormData(form);
             fetch('https://script.google.com/macros/s/AKfycbzWJhEMSozasTWmOGaBO1l9ZI7Cvl6OrMKLLzk1OwTR6a8uKdXomIBc3s2d5Pju4ZaI/exec', {
