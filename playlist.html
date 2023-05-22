@@ -203,7 +203,7 @@
         function videoplay() {
             var lan = localStorage.getItem("language");
             //window.alert(lan);
-            if (lan == null) {
+            if (lan == null || lan === undefined) {
                 window.alert("choose the language for video playlist.");
                 document.getElementById('playlist2').href = "#";
                 delete localStorage.language;
