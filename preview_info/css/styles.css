@@ -196,7 +196,7 @@ button a:visited {
 
     /* navbar brand font setting */
 
-    .navbar brand {
+    .navbar-brand {
        font-size: 1.5rem;
     }
 
@@ -248,4 +248,9 @@ button a:visited {
         border: 1px solid;
     }
     
+}
+@media (max-width: 992px) {
+    .navbar {
+        padding: 0 0 2.5rem;
+    }
 }
